@@ -7,7 +7,7 @@ file_path = "Electric_Vehicle_Population_Data.zip"
 def load_data(file_path):
     """Loads and preprocesses the electric vehicle population data."""
     try:
-        df = pd.read_csv(file_path)
+        df = pd.read_csv(file_path ,compression='zip')
         # No 'Sale Date' column, using 'Model Year' for time-based analysis
         # Ensure 'Model Year' is integer type
         df['Model Year'] = df['Model Year'].astype(int)
@@ -97,7 +97,7 @@ def main():
     st.set_page_config(layout="wide")
     st.title("Electric Vehicle Sales Analysis")
 
-    df = load_data("Electric_Vehicle_Population_Data.csv")
+    df = load_data("Electric_Vehicle_Population_Data.zip")
 
     if df is not None:
         filtered_df = create_sidebar_filters(df)
