@@ -3,7 +3,6 @@ import pandas as pd
 import plotly.express as px
 
 # Function to load data
-st.title('Electric Vehicle Population Analysis')
 
 file_path = "Electric_Vehicle_Population_Data.zip"
 def load_data(file_path):
